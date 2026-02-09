@@ -6,18 +6,12 @@
 
 <script setup>
 import { ref } from 'vue'
-import AnimalCard from '@/components/ColorCards.vue'
-const colors = ref([
-  { name: 'Leo', species: 'Lion', weight: 420 },
-  { name: 'Ella', species: 'Elephant', weight: 5000 },
-  { name: 'Max', species: 'Dog', weight: 30 },
-  { name: 'Whiskers', species: 'Cat', weight: 4 },
-  { name: 'Bubbles', species: 'Fish', weight: 0.5 },
-  { name: 'Charlie', species: 'Horse', weight: 500 },
-  { name: 'Hoppy', species: 'Rabbit', weight: 3 },
-  { name: 'Tweety', species: 'Bird', weight: 0.2 },
-  { name: 'Gerry', species: 'Giraffe', weight: 1200 },
-  { name: 'Bella', species: 'Bear', weight: 300 },
+import SeasonCard from '@/components/SeasonCards.vue'
+const seasons = ref([
+  { name: 'Spring', category: 1 },
+  { name: 'Summer', category: 1 },
+  { name: 'Autumn', category: 2 },
+  { name: 'Winter', category: 2 },
 ])
 </script>
 

@@ -7,7 +7,7 @@
 
 <script setup>
 defineProps({
-  animal: {
+  season: {
     type: Object,
     required: true,
   },
