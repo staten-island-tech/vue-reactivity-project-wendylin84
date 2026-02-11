@@ -1,17 +1,33 @@
 <template>
   <div>
-    <AnimalCard v-for="animal in animals" :key="animal.name" :animal="animal" />
+    <SeasonCard v-for="season in seasons" :key="season.name" :season="season" />
+    <ColorCard v-for="color in colors" :key="color.name" :color="color" />
+    <TypeofFood v-for="food in foods" :key="food.name" :food="food" />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import SeasonCard from '@/components/SeasonCards.vue'
+import ColorCard from '@/components/ColorCards.vue'
+import TypeofFood from '@/components/TypeofFood.vue'
 const seasons = ref([
   { name: 'Spring', category: 1 },
-  { name: 'Summer', category: 1 },
-  { name: 'Autumn', category: 2 },
-  { name: 'Winter', category: 2 },
+  { name: 'Summer', category: 2 },
+  { name: 'Autumn', category: 3 },
+  { name: 'Winter', category: 4 },
+])
+const colortype = ref([
+  { name: 'Light, Pastel Colors', category: 1 },
+  { name: 'Bright, Vibrant Colors', category: 2 },
+  { name: 'Cozy, Warm Colors', category: 3 },
+  { name: 'Dark, Gloomy Colors', category: 4 },
+])
+const foodtype = ref([
+  { name: 'Sweet', category: 1 },
+  { name: 'Salty', category: 2 },
+  { name: 'Spicy', category: 3 },
+  { name: 'Bitter', category: 4 },
 ])
 </script>
 

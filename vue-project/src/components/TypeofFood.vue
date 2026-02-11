@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>{{ season.name }}</h2>
+    <h2>{{ foods.name }}</h2>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  season: {
+  food: {
     type: Object,
     required: true,
   },
