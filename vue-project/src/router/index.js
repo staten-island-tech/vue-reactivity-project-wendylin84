@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import FindNails from '@/views/FindNails.vue'
+import IllusionHall from '@/views/IllusionHall.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: FindNails,
+      component: IllusionHall,
     },
   ],
 })

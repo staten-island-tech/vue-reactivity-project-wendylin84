@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h2>{{ colors.name }}</h2>
+    <h2>{{ skin.name }}</h2>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  color: {
+  skin: {
     type: Object,
     required: true,
   },
@@ -16,7 +16,7 @@ defineProps({
 <style scoped>
 div {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   height: 200px;
