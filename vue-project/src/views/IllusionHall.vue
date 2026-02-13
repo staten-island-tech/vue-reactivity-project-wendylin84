@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <CostumeCard v-for="skin in skins" :key="skin.name" :skin="skin" />
   </div>
 </template>
@@ -8,14 +8,24 @@
 import { ref } from 'vue'
 import CostumeCard from '@/components/CostumeCard.vue'
 const skins = ref([
-  { name: 'Spring', rarity: 'S' },
-  { name: 'Summer', rarity: 'S' },
-  { name: 'Autumn', rarity: 'S' },
-  { name: 'Winter', rarity: 'S' },
+  { name: 'Spring', rarity: 'S', price: '12,888 fragments' },
+  { name: 'Summer', rarity: 'S', price: '12,888 fragments' },
+  { name: 'Autumn', rarity: 'S', price: '12,888 fragments' },
+  { name: 'Winter', rarity: 'S', price: '12,888 fragments' },
 ])
 </script>
 
 <style scoped>
+.love-light-regular {
+  font-family: 'Love Light', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.dongle-regular {
+  font-family: 'Dongle', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 div {
   padding: 16px;
 }
@@ -33,11 +43,12 @@ h1 {
   flex-wrap: wrap;
 }
 .card {
+  font-family: 'Dongle', sans-serif;
   border: 1px solid #855a5a;
   padding: 12px;
   margin-bottom: 12px;
   border-radius: 6px;
-  width: 300px;
+  width: 250px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

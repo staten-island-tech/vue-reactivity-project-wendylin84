@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card">
     <h2>{{ skin.name }}</h2>
   </div>
 </template>
@@ -19,8 +19,9 @@ div {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 200px;
+  height: 220px;
   width: 150px;
-  border: 3px solid rgba(0, 0, 0, 1);
+  border: 3px solid;
+  background-color: aqua;
 }
 </style>
