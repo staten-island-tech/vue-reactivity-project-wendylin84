@@ -23,5 +23,6 @@ div {
   width: 150px;
   border: 3px solid;
   background-color: aqua;
+  background-image:;
 }
 </style>

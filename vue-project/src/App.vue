@@ -3,6 +3,8 @@
   <RouterView />
 </template>
 
-<script setup></script>
+<script setup>
+// array
+</script>
 
 <style scoped></style>
