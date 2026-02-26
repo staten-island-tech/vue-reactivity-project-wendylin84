@@ -1,6 +1,7 @@
 <template>
   <div class="card">
     <h2>{{ skin.name }}</h2>
+    <img :src="skin.img" />
   </div>
 </template>
 
@@ -22,7 +23,8 @@ div {
   height: 220px;
   width: 150px;
   border: 3px solid;
-  background-color: aqua;
-  background-image:;
+  background-image: url('/cardbg/atier.png');
+  background-size: cover;
+  background-position: center;
 }
 </style>
