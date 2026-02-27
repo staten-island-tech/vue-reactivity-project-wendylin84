@@ -1,12 +1,19 @@
 <template>
   <div class="container">
-    <Stier v-for="skin in STierSkins" :key="skin.name" :skin="skin" />
-    <Atier v-for="skin in ATierSkins" :key="skin.name" :skin="skin" />
+    <Stier @click="addtoCart(skin)" v-for="skin in STierSkins" :key="skin.name" :skin="skin">
+      <button>add</button>
+    </Stier>
+    <Atier @click="addtoCart(skin)" v-for="skin in ATierSkins" :key="skin.name" :skin="skin">
+      <button>add to cart</button>
+    </Atier>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+function addtoCart(item) {
+  console.log(item)
+}
 import Stier from '@/components/Stier.vue'
 import Atier from '@/components/Atier.vue'
 const STierSkins = ref([
@@ -374,8 +381,5 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-.card img {
-  width: 100%;
 }
 </style>

@@ -2,6 +2,7 @@
   <div class="card">
     <h2>{{ skin.name }}</h2>
     <img :src="skin.img" />
+    <slot>click me</slot>
   </div>
 </template>
 

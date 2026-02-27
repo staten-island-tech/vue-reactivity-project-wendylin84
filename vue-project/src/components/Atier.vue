@@ -2,6 +2,7 @@
   <div class="card">
     <h2>{{ skin.name }}</h2>
     <img :src="skin.img" />
+    <slot>click me</slot>
   </div>
 </template>
 
@@ -26,5 +27,13 @@ div {
   background-image: url('/cardbg/atier.png');
   background-size: cover;
   background-position: center;
+}
+h2 {
+  text-align: center;
+}
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 </style>
