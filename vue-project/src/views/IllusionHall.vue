@@ -93,7 +93,7 @@ const ATierSkins = ref([
     name: 'Recluse',
     rarity: 'A',
     price: '4,888 fragments',
-    img: '/deductionsurv/RecluseShopSprite.webp',
+    img: '/deductionsurv/RecluseIllusionHall.webp',
     alt: 'Recluse',
   },
   {
@@ -156,14 +156,14 @@ const ATierSkins = ref([
     name: 'Rhythm of the Rain',
     rarity: 'A',
     price: '4,888 fragments',
-    img: '/deductionsurv/RhythmofShopSprite.webp',
+    img: '/deductionsurv/RhythmOfTheRainShopSprite.webp',
     alt: 'Rhythm of the Rain',
   },
   {
     name: 'Colonel Dax',
     rarity: 'A',
     price: '4,888 fragments',
-    img: '/deductionsurv/ColonelDaxShopSprite.webp',
+    img: '/deductionsurv/ColonelDaxIllusionHallSprite.webp',
     alt: 'Colonel Dax',
   },
   {
@@ -303,7 +303,7 @@ const ATierSkins = ref([
     name: 'Faust',
     rarity: 'A',
     price: '4,888 fragments',
-    img: '/deductionhunter/FaustShopSprite.webp',
+    img: '/deductionhunter/FaustIllusionHallSprite.webp',
     alt: 'Faust',
   },
   {
