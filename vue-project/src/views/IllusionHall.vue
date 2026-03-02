@@ -371,15 +371,4 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
 }
-.card {
-  font-family: 'Dongle', sans-serif;
-  border: 1px solid #855a5a;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  width: 250px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 </style>
