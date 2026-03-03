@@ -17,20 +17,7 @@ defineProps({
 
 <style scoped>
 div {
-  font-family: 'Dongle', sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 220px;
-  width: 250px;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  border: 1px solid #855a5a;
   background-image: url('/cardbg/atier.png');
-  background-size: cover;
-  background-position: center;
 }
 h2 {
   margin: 0%;
