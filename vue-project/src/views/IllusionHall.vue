@@ -1,13 +1,27 @@
 <template>
   <div class="container">
-    <Stier @click="addtoCart(skin)" v-for="skin in STierSkins" :key="skin.name" :skin="skin">
-      <button class="btn">
+    <Stier v-for="skin in STierSkins" :key="skin.name" :skin="skin">
+      <button class="echobtn" @click="addtoCart(skin)">
+        <img src="https://via.placeholder.com/16" alt="echoes" />{{ skin.echoprice }}
+      </button>
+      <button class="fragbtn" @click="addtoCart(skin)">
         <img src="https://via.placeholder.com/16" alt="fragments" />{{ skin.fragprice }}
       </button>
     </Stier>
-    <Atier @click="addtoCart(skin)" v-for="skin in ATierSkins" :key="skin.name" :skin="skin">
-      <button>{{ skin.echoprice }}</button>
+    <Atier v-for="skin in ATierSkins" :key="skin.name" :skin="skin">
+      <button class="echobtn" @click="addtoCart(skin)">
+        <img src="https://via.placeholder.com/16" alt="echoes" />{{ skin.echoprice }}
+      </button>
+      <button class="fragbtn" @click="addtoCart(skin)">
+        <img src="https://via.placeholder.com/16" alt="fragments" />{{ skin.fragprice }}
+      </button>
     </Atier>
+  </div>
+  <div class="cart">
+    <h2>Cart</h2>
+    <ul>
+      <li v-for="item in cart" :key="item.name">{{ item.name }} — {{ item.echoprice }}</li>
+    </ul>
   </div>
 </template>
 
@@ -15,14 +29,16 @@
 import { ref } from 'vue'
 import Stier from '@/components/Stier.vue'
 import Atier from '@/components/Atier.vue'
+/* import ShoppingCart from '@/components/ShoppingCart.vue' */
+const cart = ref([])
 function addtoCart(item) {
-  console.log(item)
+  cart.value.push(item)
 }
 const STierSkins = ref([
   {
     name: 'Bird of Prey',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphsurv/BirdOfPreyShopSprite.webp',
     alt: 'Bird of Prey',
@@ -30,7 +46,7 @@ const STierSkins = ref([
   {
     name: 'Weeping Goddess',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphhunter/WeepingGoddessShopSprite.webp',
     alt: 'Weeping Goddess',
@@ -38,7 +54,7 @@ const STierSkins = ref([
   {
     name: 'Optimism of Flower',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphsurv/OptimismOfFlowerShopSprite.webp',
     alt: 'Optimism of Flower',
@@ -46,7 +62,7 @@ const STierSkins = ref([
   {
     name: 'Eternal Summer Shall Not Fade',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphsurv/EternalSummerShallNotFadeShopSprite.webp',
     alt: 'Eternal Summer Shall Not Fade',
@@ -54,7 +70,7 @@ const STierSkins = ref([
   {
     name: 'To the Myriad Silent Souls',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphsurv/ToTheMyriadSilentSoulsShopSprite.webp',
     alt: 'To the Myriad Silent Souls',
@@ -62,7 +78,7 @@ const STierSkins = ref([
   {
     name: 'Nocturne of the Nights Chant',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphsurv/NocturneOfTheNightsChantShopSprite.webp',
     alt: 'Nocturne of the Nights Chant',
@@ -70,7 +86,7 @@ const STierSkins = ref([
   {
     name: 'Resilience of Bamboo',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphhunter/ResilienceOfBambooShopSprite.webp',
     alt: 'Resilience of Bamboo',
@@ -78,7 +94,7 @@ const STierSkins = ref([
   {
     name: 'Black Bones',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphhunter/BlackBonesShopSprite.webp',
     alt: 'Black Bones',
@@ -86,7 +102,7 @@ const STierSkins = ref([
   {
     name: 'At This Hour All Is Silent',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphhunter/AtThisHourAllIsSilentShopSprite.webp',
     alt: 'At This Hour All Is Silent',
@@ -94,7 +110,7 @@ const STierSkins = ref([
   {
     name: 'Brilliant Polaris',
     rarity: 'S',
-    echoprice: '1,888 echoes',
+    echoprice: '2,888 echoes',
     fragprice: '12,888 fragments',
     img: '/nymphhunter/BrilliantPolarisShopSprite.webp',
     alt: 'Brilliant Polaris',
@@ -112,6 +128,7 @@ const ATierSkins = ref([
   {
     name: 'Recluse',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/RecluseIllusionHall.webp',
     alt: 'Recluse',
@@ -119,6 +136,7 @@ const ATierSkins = ref([
   {
     name: 'Juliet',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/JulietShopSprite.webp',
     alt: 'Juliet',
@@ -126,6 +144,7 @@ const ATierSkins = ref([
   {
     name: 'Romeo',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/RomeoShopSprite.webp',
     alt: 'Romeo',
@@ -133,6 +152,7 @@ const ATierSkins = ref([
   {
     name: 'Ben-Hur',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/BenHurShopSprite.webp',
     alt: 'Ben-Hur',
@@ -140,6 +160,7 @@ const ATierSkins = ref([
   {
     name: 'Just Around the Corner',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/JustAroundTheCornerShopSprite.webp',
     alt: 'Just Around the Corner',
@@ -147,6 +168,7 @@ const ATierSkins = ref([
   {
     name: 'So Long at the Fair',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/SoLongAtTheFairShopSprite.webp',
     alt: 'So Long at the Fair',
@@ -154,6 +176,7 @@ const ATierSkins = ref([
   {
     name: 'Forgotten George',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/ForgottenGeorgeShopSprite.webp',
     alt: 'Forgotten George',
@@ -161,6 +184,7 @@ const ATierSkins = ref([
   {
     name: 'Hamlet',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/HamletShopSprite.webp',
     alt: 'Hamlet',
@@ -168,6 +192,7 @@ const ATierSkins = ref([
   {
     name: 'Million Dollar Mermaid',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/MillionDollarMermaidShopSprite.webp',
     alt: 'Million Dollar Mermaid',
@@ -175,6 +200,7 @@ const ATierSkins = ref([
   {
     name: 'Rhythm of the Rain',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/RhythmOfTheRainShopSprite.webp',
     alt: 'Rhythm of the Rain',
@@ -182,6 +208,7 @@ const ATierSkins = ref([
   {
     name: 'Colonel Dax',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/ColonelDaxIllusionHallSprite.webp',
     alt: 'Colonel Dax',
@@ -189,6 +216,7 @@ const ATierSkins = ref([
   {
     name: 'Dorothy',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/DorothyShopSprite.webp',
     alt: 'Dorothy',
@@ -196,6 +224,7 @@ const ATierSkins = ref([
   {
     name: 'Scarlett',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/ScarlettShopSprite.webp',
     alt: 'Scarlett',
@@ -203,6 +232,7 @@ const ATierSkins = ref([
   {
     name: 'Rural Pastor',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/RuralPastorShopSprite.webp',
     alt: 'Rural Pastor',
@@ -210,6 +240,7 @@ const ATierSkins = ref([
   {
     name: 'Boudoir Dream',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/BoudoirDreamShopSprite.webp',
     alt: 'Boudoir Dream',
@@ -217,6 +248,7 @@ const ATierSkins = ref([
   {
     name: 'Iron Lady',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/IronLadyShopSprite.webp',
     alt: 'Iron Lady',
@@ -224,6 +256,7 @@ const ATierSkins = ref([
   {
     name: 'Samara',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/SamaraShopSprite.webp',
     alt: 'Samara',
@@ -231,6 +264,7 @@ const ATierSkins = ref([
   {
     name: 'Zouzou',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/ZouzouShopSprite.webp',
     alt: 'Zouzou',
@@ -238,6 +272,7 @@ const ATierSkins = ref([
   {
     name: 'The Red Shoes',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/TheRedShoesShopSprite.webp',
     alt: 'The Red Shoes',
@@ -245,6 +280,7 @@ const ATierSkins = ref([
   {
     name: 'Salome',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/SalomeShopSprite.webp',
     alt: 'Salome',
@@ -252,6 +288,7 @@ const ATierSkins = ref([
   {
     name: 'Da Vinci',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/DaVinciShopSprite.webp',
     alt: 'Da Vinci',
@@ -259,6 +296,7 @@ const ATierSkins = ref([
   {
     name: 'Phyllis',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/PhyllisShopSprite.webp',
     alt: 'Phyllis',
@@ -266,6 +304,7 @@ const ATierSkins = ref([
   {
     name: 'Rising Star',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/RisingStarShopSprite.webp',
     alt: 'Rising Star',
@@ -273,6 +312,7 @@ const ATierSkins = ref([
   {
     name: 'Alice in Dreamland',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/AliceInDreamlandShopSprite.webp',
     alt: 'Alice in Dreamland',
@@ -280,6 +320,7 @@ const ATierSkins = ref([
   {
     name: 'Werther',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/WertherShopSprite.webp',
     alt: 'Werther',
@@ -287,6 +328,7 @@ const ATierSkins = ref([
   {
     name: 'Dodger',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/DodgerShopSprite.webp',
     alt: 'Dodger',
@@ -294,6 +336,7 @@ const ATierSkins = ref([
   {
     name: '"Edward" Beneath the Crown',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionsurv/EdwardBeneathTheCrownShopSprite.webp',
     alt: '"Edward" Beneath the Crown',
@@ -301,6 +344,7 @@ const ATierSkins = ref([
   {
     name: 'Svengali',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/SvengaliShopSprite.webp',
     alt: 'Svengali',
@@ -308,6 +352,7 @@ const ATierSkins = ref([
   {
     name: 'Broken Blossoms',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/BrokenBlossomsShopSprite.webp',
     alt: 'Broken Blossoms',
@@ -315,6 +360,7 @@ const ATierSkins = ref([
   {
     name: 'Rashomon',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/RashomonShopSprite.webp',
     alt: 'Rashomon',
@@ -322,6 +368,7 @@ const ATierSkins = ref([
   {
     name: 'Faust',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/FaustIllusionHallSprite.webp',
     alt: 'Faust',
@@ -329,6 +376,7 @@ const ATierSkins = ref([
   {
     name: 'Clara',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/ClaraShopSprite.webp',
     alt: 'Clara',
@@ -336,6 +384,7 @@ const ATierSkins = ref([
   {
     name: 'Gold Miner',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/GoldMinerShopSprite.webp',
     alt: 'Gold Miner',
@@ -343,6 +392,7 @@ const ATierSkins = ref([
   {
     name: 'Mr. Hyde',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/MrHydeShopSprite.webp',
     alt: 'Mr. Hyde',
@@ -350,6 +400,7 @@ const ATierSkins = ref([
   {
     name: 'Femme Fatale',
     rarity: 'A',
+    echoprice: '1,388 echoes',
     fragprice: '4,888 fragments',
     img: '/deductionhunter/FemmeFataleShopSprite.webp',
     alt: 'Femme Fatale',
@@ -389,10 +440,19 @@ h1 {
   height: 220px;
   width: 250px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 35px;
   border-radius: 6px;
   border: 1px solid #855a5a;
   background-size: cover;
   background-position: center;
+}
+button {
+  display: inline-block;
+}
+.echobtn {
+  float: left;
+}
+.fragbtn {
+  float: left;
 }
 </style>
