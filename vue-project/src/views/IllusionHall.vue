@@ -1,19 +1,15 @@
 <template>
   <div class="container">
     <Stier v-for="skin in STierSkins" :key="skin.name" :skin="skin">
-      <button class="echobtn" @click="addtoCart(skin)">
-        <img src="https://via.placeholder.com/16" alt="echoes" />{{ skin.echoprice }}
-      </button>
-      <button class="fragbtn" @click="addtoCart(skin)">
-        <img src="https://via.placeholder.com/16" alt="fragments" />{{ skin.fragprice }}
+      <button class="btn" @click="addtoCart(skin)">
+        <img src="/cardbg/MiniEcho.webp" alt="echoes" />{{ skin.echoprice }}
+        <img src="/cardbg/Fragment.webp" alt="fragments" />{{ skin.fragprice }}
       </button>
     </Stier>
     <Atier v-for="skin in ATierSkins" :key="skin.name" :skin="skin">
-      <button class="echobtn" @click="addtoCart(skin)">
-        <img src="https://via.placeholder.com/16" alt="echoes" />{{ skin.echoprice }}
-      </button>
-      <button class="fragbtn" @click="addtoCart(skin)">
-        <img src="https://via.placeholder.com/16" alt="fragments" />{{ skin.fragprice }}
+      <button class="btn" @click="addtoCart(skin)">
+        <img src="/cardbg/MiniEcho.webp" alt="echoes" />{{ skin.echoprice }}
+        <img src="/cardbg/Fragment.webp" alt="fragments" />{{ skin.fragprice }}
       </button>
     </Atier>
   </div>
@@ -440,19 +436,26 @@ h1 {
   height: 220px;
   width: 250px;
   padding: 12px;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
   border-radius: 6px;
   border: 1px solid #855a5a;
   background-size: cover;
   background-position: center;
 }
 button {
+  height: auto;
+  width: 14.5vw;
   display: inline-block;
+  align-items: center;
+  object-fit: contain;
+  font-family: 'Dongle', sans-serif;
+  font-size: 20px;
+  background-image: url('/cardbg/atier.png');
 }
-.echobtn {
-  float: left;
-}
-.fragbtn {
-  float: left;
+button img {
+  height: 25px;
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 2.5px;
 }
 </style>
