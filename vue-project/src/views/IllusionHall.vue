@@ -17,6 +17,9 @@
     <h2>Cart</h2>
     <ul>
       <li v-for="item in cart" :key="item.name">{{ item.name }} — {{ item.echoprice }}</li>
+      <li v-for="item in cart" :key="item.name">
+        {{ item.name }} — {{ item.echoprice }} — {{ item.fragprice }}
+      </li>
     </ul>
   </div>
 </template>
@@ -437,14 +440,14 @@ h1 {
   width: 250px;
   padding: 12px;
   margin-bottom: 50px;
-  border-radius: 6px;
+  border-radius: 37px;
   border: 1px solid #855a5a;
   background-size: cover;
   background-position: center;
 }
 button {
   height: auto;
-  width: 14.5vw;
+  width: auto;
   display: inline-block;
   align-items: center;
   object-fit: contain;
