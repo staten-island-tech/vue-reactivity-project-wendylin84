@@ -16,7 +16,6 @@
   <div class="cart">
     <h2>Cart</h2>
     <ul>
-      <li v-for="item in cart" :key="item.name">{{ item.name }} — {{ item.echoprice }}</li>
       <li v-for="item in cart" :key="item.name">
         {{ item.name }} — {{ item.echoprice }} — {{ item.fragprice }}
       </li>
