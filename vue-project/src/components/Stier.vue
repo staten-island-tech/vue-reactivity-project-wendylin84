@@ -19,15 +19,21 @@ defineProps({
 div {
   background-image: url('/cardbg/stier.png');
 }
+.card {
+  border: 1.5px solid #907630;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
 h2 {
   margin: 0%;
+  font-weight: 580;
   padding: 0%;
   text-align: center;
   white-space: nowrap;
 }
-img {
+.card img {
   height: auto;
   width: auto;
-  object-fit: contain;
+  object-fit: cover;
 }
 </style>
